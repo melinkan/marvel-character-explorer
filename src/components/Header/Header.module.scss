@@ -1,0 +1,14 @@
+.base {
+  background-color: rgb(35, 35, 35);
+  color: white;
+  padding: 20px;
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
