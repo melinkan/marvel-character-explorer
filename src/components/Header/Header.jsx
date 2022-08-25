@@ -5,7 +5,7 @@ import styles from "./Header.module.scss";
 export function Header() {
   return (
     <header className={styles.base}>
-      <div className={styles.container}>
+      <div className={`container ${styles.container}`}>
         <img src={marvelLogo} alt="logo" />
 
         <form action="">

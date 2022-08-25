@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;800&display=swap");
+
 * {
+  font-family: "Kanit", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -14,4 +17,9 @@ body {
 ol,
 ul {
   list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
