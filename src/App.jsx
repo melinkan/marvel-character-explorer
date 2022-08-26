@@ -1,48 +1,17 @@
-import { useEffect, useState } from "react";
-import { Header, Card, CharList } from "./components";
-import axios from "axios";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Detail from "./routes/Detail";
+import Home from "./routes/Home";
+import { Header } from "./components";
 
 function App() {
-  const [chars, setChars] = useState([]);
-  let offset = 0;
-
-  const loadMore = () => {
-    axios
-      .get(
-        `https://gateway.marvel.com:443/v1/public/characters?limit=30&offset=${offset}&apikey=3ed3143d1f4660857e06b20c20aa1a2a`
-      )
-      .then(({ data }) => {
-        const newChars = [];
-        data.data.results.forEach((char) => newChars.push(char));
-        setChars((prev) => [...prev, ...newChars]);
-        console.log(data);
-      });
-    offset += 30;
-  };
-
-  const handleScroll = (e) => {
-    if (
-      window.innerHeight + e.target.documentElement.scrollTop + 1 >=
-      e.target.documentElement.scrollHeight
-    ) {
-      loadMore();
-    }
-  };
-
-  useEffect(() => {
-    loadMore();
-    window.addEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <CharList>
-        {chars.map((char, index) => {
-          return <Card key={index} char={char} />;
-        })}
-      </CharList>
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="characters/:id" element={<Detail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
