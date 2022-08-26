@@ -7,8 +7,13 @@
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
+}
+
+html,
+body,
+#root {
+  height: 100%;
 }
 
 body {
@@ -22,4 +27,14 @@ ul {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.img-fluid {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.fixed-top {
+  margin-top: 94.25px;
 }
