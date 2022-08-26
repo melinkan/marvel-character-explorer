@@ -1,12 +1,39 @@
 .base {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
   background-color: #000;
   color: white;
   padding: 20px;
+  z-index: 1;
 }
-
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.formControl {
+  position: relative;
+}
+
+.input {
+  border-radius: 1.5rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+}
+
+.button {
+  width: 50px;
+  background: #fc0000;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0.5rem;
+  border-radius: 1.5rem;
 }
