@@ -35,8 +35,8 @@ export default function Home() {
 
   return (
     <CharList>
-      {chars.map((char, index) => {
-        return <Card key={index} char={char} />;
+      {chars.map((char) => {
+        return <Card key={char.id} char={char} />;
       })}
     </CharList>
   );
