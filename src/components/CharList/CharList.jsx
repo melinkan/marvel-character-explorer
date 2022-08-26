@@ -3,7 +3,7 @@ import styles from "./CharList.module.scss";
 
 export const CharList = ({ children }) => {
   return (
-    <main className={styles.base}>
+    <main className={`fixed-top ${styles.base}`}>
       <div className={`container ${styles.container}`}>{children}</div>
     </main>
   );
