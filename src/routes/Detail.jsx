@@ -23,9 +23,5 @@ export default function Detail() {
     fetchCharacter();
   }, [id]);
 
-  return (
-    <main>
-      <DetailCard character={character} />
-    </main>
-  );
+  return <DetailCard character={character} />;
 }
