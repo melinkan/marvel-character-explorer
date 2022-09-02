@@ -1,6 +1,6 @@
 # Marvel Character Explorer
 
-This web app built with using ReactJS.
+This web app built with using [Vite](https://vitejs.dev/) + [React](https://reactjs.org/).
 
 You can preview [here](https://marvel-character-explorer.netlify.app/)
 
