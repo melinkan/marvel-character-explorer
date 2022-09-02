@@ -1,15 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Card, CharList } from "../components";
 import axios from "axios";
+import { SearchContext } from "../contexts";
 
 export default function Home() {
+  const { searchQuery } = useContext(SearchContext);
   const [chars, setChars] = useState([]);
+  console.log(chars);
   let offset = 0;
-
+  const params = {};
+  if (searchQuery) {
+    params.nameStartsWith = searchQuery;
+  }
   const loadMore = () => {
     axios
       .get(
-        `https://gateway.marvel.com:443/v1/public/characters?limit=30&offset=${offset}&apikey=3ed3143d1f4660857e06b20c20aa1a2a`
+        `https://gateway.marvel.com:443/v1/public/characters?limit=30&offset=${offset}&apikey=3ed3143d1f4660857e06b20c20aa1a2a`,
+        {
+          params,
+        }
       )
       .then(({ data }) => {
         const newChars = [];
@@ -29,9 +38,16 @@ export default function Home() {
   };
 
   useEffect(() => {
+    setChars([]);
+  }, [searchQuery]);
+
+  useEffect(() => {
     loadMore();
     window.addEventListener("scroll", handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [searchQuery]);
 
   return (
     <CharList>
