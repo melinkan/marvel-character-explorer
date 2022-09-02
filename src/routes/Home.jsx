@@ -6,7 +6,6 @@ import { SearchContext } from "../contexts";
 export default function Home() {
   const { searchQuery } = useContext(SearchContext);
   const [chars, setChars] = useState([]);
-  console.log(chars);
   let offset = 0;
   const params = {};
   if (searchQuery) {

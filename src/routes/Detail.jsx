@@ -13,7 +13,6 @@ export default function Detail() {
         `https://gateway.marvel.com:443/v1/public/characters/${id}?&apikey=3ed3143d1f4660857e06b20c20aa1a2a`
       )
       .then(({ data }) => {
-        console.log(data.data.results[0]);
         setCharacter(data.data.results[0]);
       });
   };

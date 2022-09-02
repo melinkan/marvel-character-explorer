@@ -11,7 +11,6 @@ export default function DetailCard({ character }) {
         `https://gateway.marvel.com:443/v1/public/characters/${character.id}/comics?offset=0&limit=10&apikey=3ed3143d1f4660857e06b20c20aa1a2a`
       )
       .then(({ data }) => {
-        console.log(data.data.results);
         setComics(data.data.results);
       });
   };
@@ -34,7 +33,7 @@ export default function DetailCard({ character }) {
         <div className={styles.card}>
           <div>
             <img
-              className={`img-fluid ${styles.imgWrapper}`}
+              className={`${styles.imgWrapper}`}
               src={
                 character.thumbnail.path + "." + character.thumbnail.extension
               }
