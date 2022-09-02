@@ -8,6 +8,7 @@ You can preview [here](https://marvel-character-explorer.netlify.app/)
 
 - [React](https://reactjs.org/)
 - [React Router](https://reactrouter.com/) for routing
+- [Context API](https://reactjs.org/docs/context.html) for state management
 - [SASS](https://sass-lang.com/guide) and [CSS modules](https://github.com/css-modules/css-modules) for styling
 - [Axios](https://axios-http.com/docs/intro) for making API calls
 
